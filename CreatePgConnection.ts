@@ -6,7 +6,7 @@ dotenv.config();
 
 createConnection({
     type:"postgres",
-    url:process.env.postgres,
+    url:process.env.DATABASE_URL,
     ssl:true,
     entities:[Hotel],
     extra: {
