@@ -6,6 +6,7 @@ import { buildSchema } from 'type-graphql';
 import './CreatePgConnection';
 import HotelResolver from './HotelResolver';
 
+
 // this is a comment
 // const app = new koa();
 // const resolvers = buildSchema({resolvers:[HotelResolver]})
@@ -24,7 +25,7 @@ router.all("/graphql", koaGraphQl({
 }))
 app.use(router.routes()).use(router.allowedMethods());
 apolloServer.applyMiddleware({app, cors:false});
-app.listen(process.env.PORT || 5002);
+app.listen(process.env.PORT);
 }
 
 main();
