@@ -3,7 +3,7 @@ import { Hotel } from "./Hotel";
 
 createConnection({
     type:"postgres",
-    url:process.env.URI,
+    url:process.env.DATABASE_URL,
     ssl:true,
     entities:[Hotel],
     extra: {
