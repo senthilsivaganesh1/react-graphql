@@ -1,4 +1,5 @@
 const koa = require('koa');
+const cors = require('@koa/cors');
 const  Router = require("koa-router");
 const koaGraphQl = require("koa-graphql");
 import { ApolloServer } from "apollo-server-koa";
@@ -13,6 +14,8 @@ import HotelResolver from './HotelResolver';
 
 async function main() {
 const app = new koa();
+app.use(cors());
+// app.use(allowCrossDomain)
 const resolvers = await buildSchema({resolvers:[HotelResolver]});
 const apolloServer = new ApolloServer({
     schema: resolvers,
