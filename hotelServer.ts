@@ -27,7 +27,7 @@ router.all("/graphql", koaGraphQl({
     graphiql:true
 }))
 app.use(router.routes()).use(router.allowedMethods());
-apolloServer.applyMiddleware({app, cors:false});
+apolloServer.applyMiddleware({app, cors:true});
 app.listen(process.env.PORT);
 }
 
